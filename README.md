@@ -48,7 +48,7 @@ Penggunaan:
 - [x] State String
 - [x] State Number
 - [x] State Boolean
-- [ ] State Array
+- [x] State Array
 - [ ] State Object
 
 Contoh:
