@@ -82,8 +82,8 @@ Contoh:
 
 ### Rendering List
 
-- [ ] Memahami `.map()`
-- [ ] Menampilkan Array ke UI
+- [x] Memahami `.map()`
+- [x] Menampilkan Array ke UI
 - [ ] Membuat Component dari data Array
 - [ ] Memahami `key`
 - [ ] Menggunakan `key` yang benar
