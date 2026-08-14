@@ -69,10 +69,10 @@ const [count, setCount] = useState(0)
 
 ### Conditional Rendering
 
-- [ ] `if`
-- [ ] Ternary Operator `? :`
-- [ ] Logical AND `&&`
-- [ ] Menampilkan Component berdasarkan State
+- [x] `if`
+- [x] Ternary Operator `? :`
+- [x] Logical AND `&&`
+- [x] Menampilkan Component berdasarkan State
 
 Contoh:
 
