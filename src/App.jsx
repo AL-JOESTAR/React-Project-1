@@ -19,9 +19,6 @@ function Card2 ({ children }) { // wajib pakai {children} tidak bisa dirubah
 }
 
 
-
-
-
 function App() {
   const [count, setCount] = useState(0) //state
   const [names, setNames] = useState(["budi", "Rusdi"]) //array state
@@ -94,6 +91,7 @@ function App() {
       </div>
 
     </div>
+    
   )
 }
 
