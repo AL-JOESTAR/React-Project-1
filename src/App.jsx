@@ -18,20 +18,37 @@ function Card2 ({ children }) { // wajib pakai {children} tidak bisa dirubah
   )
 }
 
+
+
+
+
 function App() {
   const [count, setCount] = useState(0) //state
   const [names, setNames] = useState(["budi", "Rusdi"]) //array state
+  const [user, setUser] = useState({
+        name : "Supri",
+        Age : 21
+      })
+    
+
+    const rubahNama = () => {
+      setUser({
+        ...user,
+          name : "Bowo"
+      })
+    }
 
     function addName() {
       setNames([...names, "joko"])
     }
 
     function Delete(){
-      setNames([names.filter((nama) => nama !== "joko")])
+      setNames(names.filter((nama) => nama !== "joko"))
     }
 
+
   return (
-    <>
+    <div>
       <Card nama= "Budi" pekerjaan = "Progamer"/>
 
       {/* ================================================ */}
@@ -62,7 +79,16 @@ function App() {
           <p key={nama} > {nama}</p>
         ))}
       </div>
-    </>
+
+      {/* =============================================== */}
+      <div>
+        <h2>{user.name}</h2>
+        <p>{user.Age}</p>
+
+      </div>
+        <button onClick={rubahNama}>Rubah</button>
+
+    </div>
   )
 }
 
