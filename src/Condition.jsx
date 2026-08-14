@@ -30,6 +30,7 @@ function Condition (){
                 {umur >= 18 && login == true ? <Dashbord/> : <Kick/>}
             </p>
 
+
         </>
     )
 }
