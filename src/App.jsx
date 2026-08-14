@@ -25,6 +25,8 @@ function Card2 ({ children }) { // wajib pakai {children} tidak bisa dirubah
 function App() {
   const [count, setCount] = useState(0) //state
   const [names, setNames] = useState(["budi", "Rusdi"]) //array state
+
+  // =============== State Obejct ===================
   const [user, setUser] = useState({
         name : "Supri",
         Age : 21
@@ -37,6 +39,7 @@ function App() {
           name : "Bowo"
       })
     }
+// ===============================================
 
     function addName() {
       setNames([...names, "joko"])
@@ -84,9 +87,11 @@ function App() {
       <div>
         <h2>{user.name}</h2>
         <p>{user.Age}</p>
-
+        
+        <button onClick={rubahNama}>
+          Rubah
+        </button>
       </div>
-        <button onClick={rubahNama}>Rubah</button>
 
     </div>
   )

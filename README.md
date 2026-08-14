@@ -49,7 +49,7 @@ Penggunaan:
 - [x] State Number
 - [x] State Boolean
 - [x] State Array
-- [ ] State Object
+- [x] State Object
 
 Contoh:
 
