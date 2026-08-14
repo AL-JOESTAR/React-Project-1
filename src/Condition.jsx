@@ -1,6 +1,14 @@
+function Dashbord () {
+    return <h2>ini dashboard</h2>
+}
+
+function Kick () {
+    return <h2>keluar kamu</h2>
+}
+
 function Condition (){
     const login = true
-    const umur = 17
+    const umur = 18
     // condition biasa
         // if (!login) {
         //     return <p>login dulu</p>
@@ -19,7 +27,7 @@ function Condition (){
             </p>
 
             <p>
-                {umur >= 18 && login == true ? "dashboard" : "keluar lu bocah"}
+                {umur >= 18 && login == true ? <Dashbord/> : <Kick/>}
             </p>
 
         </>
