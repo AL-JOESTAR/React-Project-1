@@ -1,3 +1,9 @@
+function Card (props) {
+    return (
+    <p>{props.namaku}</p>
+    )
+}
+
 function Map (){
 const fruits = ["Apel", "Mangga", "Jeruk"];
 
@@ -36,6 +42,16 @@ const products = [
                         <p>{product.product}</p>
                         <p>{product.price}</p>
                     </div>
+                ))}
+            </div>
+            <p>========================== WITH CARD ========================</p>
+            <div>
+                {users.map((user) => (
+                
+                    <Card
+                    key={user.id}   
+                    namaku={user.nama}
+                    />
                 ))}
             </div>
         </>
