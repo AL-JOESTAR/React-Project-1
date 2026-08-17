@@ -1,16 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './App.css'
 import App from './App.jsx'
-import Condition from './Condition.jsx'
-import Map from './Map.jsx'
-import Event from './Event.jsx'
+// import Condition from './Condition.jsx'
+// import Map from './Map.jsx'
+// import Event from './Event.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <Map/>
+    {/* <Map/>
     <Condition/>
-    <Event/>
+    <Event/> */}
   </StrictMode>,
 )
