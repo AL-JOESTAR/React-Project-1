@@ -70,11 +70,11 @@ export default function App() {
 
       <main className="main">
         <div className="box">
-          <button className="btn-toggle" onClick={() => setIsOpen1((open) => !open)}>
+          <button className="btn-toggle" onClick={() => setIsOpen1((open) => !open)}> // akan membalikan tombol, kalau bernilai true -, jika di click akan menjalanka kebalikan nya false +
             {isOpen1 ? '–' : '+'}
           </button>
-          {isOpen1 && (
-            <ul className="list list-anime">
+          {isOpen1 && ( // hanya mengambil nilai yang true
+            <ul className="list list-   anime">
               {animes?.map((anime) => (
                 <li key={anime.mal_id} onClick={() => handleSelectedAnime(anime.mal_id)}>
                   <img src={anime.image} alt={`${anime.title} cover`} />
