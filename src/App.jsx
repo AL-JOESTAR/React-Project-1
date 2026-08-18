@@ -77,7 +77,7 @@ export default function App() {
             <ul className="list list-   anime"> 
               {animes?.map((anime) => (
                 <li key={anime.mal_id} onClick={() => handleSelectedAnime(anime.mal_id)}>
-                  <img src={anime.image} alt={`${anime.title} cover`} />
+                  <img src={anime.image} alt={`${anime.title} cover`} /> // mengambil nama anime dari list dan ditambah cover, misal menambah naruto menjadi naruto cover
                   <h3>{anime.title}</h3>
                   <div>
                     <p>
