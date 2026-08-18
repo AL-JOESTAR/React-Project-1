@@ -73,11 +73,12 @@ export default function App() {
          <button className="btn-toggle" onClick={() => setIsOpen1((open) => !open)}>  {/* akan membalikan tombol, kalau bernilai true -, jika di click akan menjalanka kebalikan nya false + */}
             {isOpen1 ? '–' : '+'}
           </button>
-          {isOpen1 && ( // hanya mengambil nilai yang true, dan kalau dibuka akan mengembalikan nilai <ul></ul>, kalau false tidak melakukan apa ap
+          {/* hanya mengambil nilai yang true, dan kalau dibuka akan mengembalikan nilai <ul></ul>, kalau false tidak melakukan apa ap */}
+          {isOpen1 && ( 
             <ul className="list list-   anime"> 
               {animes?.map((anime) => (
                 <li key={anime.mal_id} onClick={() => handleSelectedAnime(anime.mal_id)}>
-                  <img src={anime.image} alt={`${anime.title} cover`} /> // mengambil nama anime dari list dan ditambah cover, misal menambah naruto menjadi naruto cover
+                  <img src={anime.image} alt={`${anime.title} cover`} /> {/* mengambil nama anime dari list dan ditambah cover, misal menambah naruto menjadi naruto cover */}
                   <h3>{anime.title}</h3>
                   <div>
                     <p>
