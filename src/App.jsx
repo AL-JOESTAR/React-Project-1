@@ -54,7 +54,7 @@ function NavBar () {
   return (
     <nav className="nav-bar">
         <Logo />
-        <NavBar />
+        <Search />
     </nav>
   )
 }
@@ -107,7 +107,7 @@ function Main () {
           </button>
           {/* hanya mengambil nilai yang true, dan kalau dibuka akan mengembalikan nilai <ul></ul>, kalau false tidak melakukan apa ap */}
           {isOpen1 && ( 
-            <ul className="list list-   anime"> 
+            <ul className="list list-anime"> 
               {animes?.map((anime) => (
                 <li key={anime.mal_id} onClick={() => handleSelectedAnime(anime.mal_id)}>
                   <img src={anime.image} alt={`${anime.title} cover`} /> {/* mengambil nama anime dari list dan ditambah cover, misal menambah naruto menjadi naruto cover */}
