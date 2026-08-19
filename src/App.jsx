@@ -117,9 +117,25 @@ function ListBox ({animes, onSelectedAnime}) {
           </button>
           {/* hanya mengambil nilai yang true, dan kalau dibuka akan mengembalikan nilai <ul></ul>, kalau false tidak melakukan apa ap */}
           {isOpen1 && ( 
+            <AnimeList animes={animes} onSelectedAnime={onSelectedAnime}/>
+          )}
+        </div>
+  )
+}
+
+function AnimeList ({animes, onSelectedAnime}) {
+  return (
             <ul className="list list-anime"> 
               {animes?.map((anime) => (
-                <li key={anime.mal_id} onClick={() => onSelectedAnime(anime.mal_id)}>
+              <Anime key={anime.mal_id} anime={anime} onSelectedAnime={onSelectedAnime} />
+              ))}
+            </ul>
+  )
+}
+
+function Anime ({anime, onSelectedAnime}) {
+  return (
+                <li  onClick={() => onSelectedAnime(anime.mal_id)}>
                   <img src={anime.image} alt={`${anime.title} cover`} /> {/* mengambil nama anime dari list dan ditambah cover, misal menambah naruto menjadi naruto cover */}
                   <h3>{anime.title}</h3>
                   <div>
@@ -128,10 +144,6 @@ function ListBox ({animes, onSelectedAnime}) {
                     </p>
                   </div>
                 </li>
-              ))}
-            </ul>
-          )}
-        </div>
   )
 }
 
@@ -139,11 +151,19 @@ function SelectedBox({selectedAnime}) {
   const [isOpen2, setIsOpen2] = useState(true);
 
   return (
-            <div className="box">
+        <div className="box">
           <button className="btn-toggle" onClick={() => setIsOpen2((open) => !open)}>
             {isOpen2 ? '–' : '+'}
           </button>
           {isOpen2 && (
+          <Detail selectedAnime={selectedAnime}/>
+          )}
+        </div>
+  )
+}
+
+function Detail ({selectedAnime}) {
+  return (
             <div className="details">
               <header>
                 <img src={selectedAnime.image} alt={`${selectedAnime.title} cover`} />
@@ -160,7 +180,5 @@ function SelectedBox({selectedAnime}) {
                 </p>
               </section>
             </div>
-          )}
-        </div>
   )
 }
