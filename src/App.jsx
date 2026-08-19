@@ -91,17 +91,27 @@ function NumResult () {
 function Main () {
   const [animes, setAnimes] = useState(animesData);
   const [selectedAnime, setSelectedAnime] = useState(animes[0]);
-  const [isOpen1, setIsOpen1] = useState(true);
-  const [isOpen2, setIsOpen2] = useState(true);
 
-  function handleSelectedAnime(id) {
+      function handleSelectedAnime(id) {
     const newAnime = animes.filter((anime) => anime.mal_id === id);
     setSelectedAnime(newAnime[0]);
   }
 
   return (
-          <main className="main">
-        <div className="box">
+      <main className="main">
+        {/* ambil animes dan handle selectedanime untuk dimasukan ke components animelist */}
+        <ListBox animes={animes} onSelectedAnime={handleSelectedAnime}/>
+        <SelectedBox selectedAnime={selectedAnime}/>
+      </main>
+  )
+}
+
+
+function ListBox ({animes, onSelectedAnime}) {
+  const [isOpen1, setIsOpen1] = useState(true); 
+  
+  return (
+          <div className="box">
          <button className="btn-toggle" onClick={() => setIsOpen1((open) => !open)}>  {/* akan membalikan tombol, kalau bernilai true -, jika di click akan menjalanka kebalikan nya false + */}
             {isOpen1 ? '–' : '+'}
           </button>
@@ -109,7 +119,7 @@ function Main () {
           {isOpen1 && ( 
             <ul className="list list-anime"> 
               {animes?.map((anime) => (
-                <li key={anime.mal_id} onClick={() => handleSelectedAnime(anime.mal_id)}>
+                <li key={anime.mal_id} onClick={() => onSelectedAnime(anime.mal_id)}>
                   <img src={anime.image} alt={`${anime.title} cover`} /> {/* mengambil nama anime dari list dan ditambah cover, misal menambah naruto menjadi naruto cover */}
                   <h3>{anime.title}</h3>
                   <div>
@@ -122,7 +132,14 @@ function Main () {
             </ul>
           )}
         </div>
-        <div className="box">
+  )
+}
+
+function SelectedBox({selectedAnime}) {
+  const [isOpen2, setIsOpen2] = useState(true);
+
+  return (
+            <div className="box">
           <button className="btn-toggle" onClick={() => setIsOpen2((open) => !open)}>
             {isOpen2 ? '–' : '+'}
           </button>
@@ -145,6 +162,5 @@ function Main () {
             </div>
           )}
         </div>
-      </main>
   )
 }
