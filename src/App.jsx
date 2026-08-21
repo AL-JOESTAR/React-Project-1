@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import './App.css';
 
 const animesData = [
@@ -41,55 +41,60 @@ const animesData = [
 ];
 
 export default function App() {
+  const [animes, setAnimes] = useState(animesData);
 
   return (
     <>
-    <NavBar />
-    <Main />
+    <NavBar>
+      <Search>
+        <NumResult animes={animes}/>
+      </Search>
+    </NavBar>
+    <Main animes={animes}/>
     </>
   );
 }
 
-function NavBar () {
+function NavBar ({children}) {
   return (
     <nav className="nav-bar">
         <Logo />
-        <Search />
+        {children}
     </nav>
   )
 }
 
+// stateless (compoenent yang tidak punya state)
 function Logo () {
   return (
     <div className="logo">
           <span role="img">🍥</span>
           <h1>WeeBoo</h1>
           <span role="img">🍥</span>
-    </div>
+    </div>  
   )
 }
 
-function Search () {
+function Search ({children}) {
   const [query, setQuery] = useState('');
 
   return (
     <div className="search-container">
           <input className="search" type="text" placeholder="Search anime..." value={query} onChange={(e) => setQuery(e.target.value)} />
-          <NumResult />
+          {children}
     </div>
   )
 }
 
-function NumResult () {
+function NumResult ({animes}) {
   return (
      <p className="search-results">
-        Found <strong>4</strong> results
+        Found <strong>{animes.length}</strong> results
     </p>
   )
 }
 
-function Main () {
-  const [animes, setAnimes] = useState(animesData);
+function Main ({animes}) {
   const [selectedAnime, setSelectedAnime] = useState(animes[0]);
 
       function handleSelectedAnime(id) {
